@@ -62,20 +62,15 @@ void printFun(T1 v)
 int main()
 {   
     vector<int> v;
-    // v.push_back(4);
-    // v.push_back(2);
-    // v.push_back(2);
-    // v.push_back(6);
-    // v.push_back(1);
-    // v.push_back(10);
-    for(int i=0; i<10000; i++)
-    {
-        v.push_back(i);
-    }
-
+    v.push_back(4);
+    v.push_back(2);
+    v.push_back(2);
+    v.push_back(6);
+    v.push_back(1);
+    v.push_back(10);
     long start = GetTickCount();
-    // for_each(v.begin(), v.end(), printFun<int>);
-    // cout << endl;
+    for_each(v.begin(), v.end(), printFun<int>);
+    cout << endl;
 
     quickSort<int>().shuffle(v);    // 如果是有序数据，打乱再排序 0ms
     quickSort<int>().sort(v, 0, v.size()-1);    // 不打乱 78ms
@@ -83,5 +78,5 @@ int main()
     long end = GetTickCount();  
 
     cout << end - start << endl; // 94
-    // for_each(v.begin(), v.end(), printFun<int>);
+    for_each(v.begin(), v.end(), printFun<int>);
 }
